@@ -57,25 +57,26 @@ const STORE = {
     ]
 }
 
+
+
+
 //press the start button to render a question
-function startQuizButton(){
-    $('button').on('click', function(event){
-        renderQuestions();
+function startQuizButton() {
+    $('.button-text').on('click', function (event) {
+       renderQuestions();
     });
 }
 
-
 //rendering the questions to the dom
-function renderQuestions(){
+function renderQuestions() {
     console.log('`renderQuestions`ran')
     const quizQuestions = 'When was the NBA founded?';
 
-        $('.nba-questions').html(quizQuestions);
+    $('.nba-questions').html(quizQuestions);
 }
 
 
 function callBackFunc(){
-    startQuizButton();
-    renderQuestions();
-}
-$(callBackFunc);
+   startQuizButton();
+};
+$(callBackFunc()); 
