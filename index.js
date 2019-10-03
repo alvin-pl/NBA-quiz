@@ -1,3 +1,4 @@
+//Quiz questions 
 const STORE = {
     questions: [//1
         {
@@ -54,29 +55,51 @@ const STORE = {
             ],
             answer: "Kevin Garnett",
         },
-    ]
+    ],
+};
+
+//variables for the quiz score and the number of questions
+let score = 0;
+let questionNumber = 0; 
+
+function generateQuestionContent(optionsnow){
+    return `
+<li>1946</li>
+<li>1982</li>
+<li>1931</li>
+<li>1901</li>
+    `;
 }
 
-
-
-
-//press the start button to render a question
+//press the start button to render, renderQuestionPage
 function startQuizButton() {
-    $('.button-text').on('click', function (event) {
-       renderQuestions();
+    $('.start-button').on('click', function(event) {
+       // questionsPage();
+        //generateQuestionContent()
+
+        let grabOptionStrings = generateQuestionContent(STORE); 
+        $('.quiz-options').html(grabOptionStrings);
+        // 1. to start-FIRST you call this INSIDE of a function 
+        // 2. the grabOptionStrings variable has the FUNCTION generateQuestionContent(STORE) assigned to it
+        // 3. you have to create the generateQuestionContent function w/ a diff argument inside the ()
+        // 4. and return hardcoded strings within back tics inside of that function 
     });
 }
 
-//rendering the questions to the dom
-function renderQuestions() {
-    console.log('`renderQuestions`ran')
-    const quizQuestions = 'When was the NBA founded?';
+function questionsPage(){
+    //the question rank should appear
+    //the score rank should appear
+    //the first question should appear
+    //the answer options should appear
 
-    $('.nba-questions').html(quizQuestions);
+    
 }
 
 
-function callBackFunc(){
-   startQuizButton();
-};
-$(callBackFunc()); 
+
+function handleNbaApp() {
+    startQuizButton();
+}
+
+$(handleNbaApp);
+

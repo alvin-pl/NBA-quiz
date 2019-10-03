@@ -1,47 +1,145 @@
-.header{
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
 
 body{
-  background: url('');
+  background: linear-gradient(rgba(255, 255, 255,.5), rgba(255,255,255,.5)), url('/Users/alvinpl/Desktop/nba-pics/hardwood.jpg');
+
 }
 
-.q{
-    font-family:Arial, Helvetica, sans-serif;
+ul{
+  display:block;
+  margin-top: 30px;
 }
 
-h1{
-    font-family:Arial, Helvetica, sans-serif;
+header{
+    margin-top: 25px;
+    height:80px;
+    color: black;
+    margin-bottom: 55px;
+}
+
+.box{
+ /* opacity: 0.5; */
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+header h1 {
+    line-height: 1;
+    top:24px;
     text-align: center;
 }
 
-.quiz-box{
+header .question-and-score {
+  font-size: 20px;
+  font-weight: 600px;
+  color: black;
+  background: none;
+  text-align: center;
+}
+
+.question-and-score ul {
+  text-align:center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.question-and-score li {
+  display: inline-block;
+  padding:0 2%;
+}
+
+button{
+  margin-top: 50px;
+  height: auto;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color:black;
+  background: rgb(250, 115, 115);
+  border: 0;
+  bottom: 100px;
+  border-radius:3px;
+  padding: 10px 20px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+fieldset {
   width:80%;
   padding: 40px;
-  margin-top: 50px;
   margin:0 auto;
-  background:rgba(241, 241, 241, 0.562);
+  background:rgb(228, 228, 228);
   border-radius: 10px;
-  height: 50%;
-  border-style: groove;
-  opacity: 15.0;
+  height: 300px;
 }
 
-legend{
-     font-family:Arial, Helvetica, sans-serif;
+legend {
+  font-weight: 700;
+  font-size: 18px;
 }
 
-.box-text{
-    font-family:Arial, Helvetica, sans-serif;
-    display: flex;
-    top: 0;
+
+ul {
+  list-style: none;
+  margin:0;
+  text-align:left;
 }
 
-.button-text{
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    padding: 15px 32px;
-    font-size: 16px;
-    margin: 4px 2px;
+label {
+  font-size:18px;
+}
+
+.right-answer {
+ background:ivory;
+ padding: 10px 20px;
+ margin: 5px 20px;
+ border:2px solid greenyellow;
+}
+
+.wrong-answer {
+  background:ivory;
+  padding: 10px;
+  margin: 5px 20px;
+  border:2px solid #fe0000;
+}
+
+
+
+/* float */
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.box::before,
+.box::after {
+  display: table;
+  content: '';
+}
+
+.box::after {
+  clear: both;
+}
+
+.under-box {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+.under-box {
+  width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+.under-box {
+    width: 100%;
+  }
 }
