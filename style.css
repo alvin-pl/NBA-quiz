@@ -1,76 +1,68 @@
-
-body{
-  background: linear-gradient(rgba(255, 255, 255,.5), rgba(255,255,255,.5)), url('/Users/alvinpl/Desktop/nba-pics/hardwood.jpg');
-
+body {
+  font-family: "Roboto", sans-serif;
+  margin:0;
+  background-image: url('hardwood.jpg');
 }
 
-ul{
-  display:block;
-  margin-top: 30px;
+header {
+  margin-top: 25px;
+  height:80px;
+  color: white;
+  margin-bottom: 55px;
 }
 
-header{
-    margin-top: 25px;
-    height:80px;
-    color: black;
-    margin-bottom: 55px;
-}
-
-.box{
- /* opacity: 0.5; */
-    max-width: 1000px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
+.box {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
 }
 
 header h1 {
-    line-height: 1;
-    top:24px;
-    text-align: center;
-}
-
-header .question-and-score {
-  font-size: 20px;
-  font-weight: 600px;
-  color: black;
-  background: none;
+  line-height: 1;
+  top:24px;
   text-align: center;
 }
 
-.question-and-score ul {
+header .question-score {
+  font-size: 20px;
+  font-weight: 600px;
+  color:white;
+  background: none;
+}
+
+.question-score ul {
   text-align:center;
   padding-left: 2%;
   padding-right: 2%;
 }
 
-.question-and-score li {
+.question-score li {
   display: inline-block;
   padding:0 2%;
 }
 
-button{
-  margin-top: 50px;
+button {
+  margin-top:10px;
   height: auto;
   font-size: 18px;
   font-weight: 500;
   text-align: center;
   color:black;
-  background: rgb(250, 115, 115);
+  background: orange;
   border: 0;
-  bottom: 100px;
+  cursor: pointer;
+  margin-bottom: 0;
   border-radius:3px;
   padding: 10px 20px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 fieldset {
   width:80%;
   padding: 40px;
   margin:0 auto;
-  background:rgb(228, 228, 228);
+  background:rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  height: 300px;
 }
 
 legend {
@@ -78,8 +70,14 @@ legend {
   font-size: 18px;
 }
 
+.question-form .question {
+  margin-bottom: 20px;
+  padding: 0 2%;
+  font-size: 20px;
+  font-weight: 600px;
+}
 
-ul {
+.options ul {
   list-style: none;
   margin:0;
   text-align:left;
@@ -87,6 +85,11 @@ ul {
 
 label {
   font-size:18px;
+}
+
+.options span {
+  display:block;
+  border-radius:5px;
 }
 
 .right-answer {
@@ -103,9 +106,24 @@ label {
   border:2px solid #fe0000;
 }
 
+.question-form button {
+  float:right;
+}
+
+button:hover:enabled,
+button:focus:enabled{
+  background-color: #ff8d00;
+  -webkit-transition: background 0.1s;
+  -moz-transition: background 0.1s;
+  -o-transition: background 0.1s;
+  transition: background 0.1s;
+}
+
+button:disabled {
+  opacity:0.5;
+}
 
 
-/* float */
 
 * {
   box-sizing: border-box;
@@ -139,7 +157,7 @@ label {
 }
 
 @media only screen and (min-width: 640px) {
-.under-box {
+  .under-box {
     width: 100%;
   }
 }

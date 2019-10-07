@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>A quiz about how well you much you know about the NBA</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="HTML, CSS & JS Quiz">
+  <title>A quiz about how well you much you know about the NBA</title>
+  <link rel="shortcut icon" href="#">
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="body">
+
+<body>
   <header>
-   <div class="box">
-     <div class="under-box">
-      <h1>NBA Quiz</h1> 
-      <div class="question-and-score"></div>
-    </div>
-  </div>
-</header>
-
-<main role="main">
-  <fieldset>
     <div class="box">
       <div class="under-box">
-        <legend>Everything about the NBA</legend>
-        <p>Test your knowledge about the NBA
-        to see if you're a real fan or not!</p>
-        <p class="quiz-question"></p>
-        <ul type="circle" class="quiz-options"></ul>
+        <h1>NBA Quiz</h1>
+        <div class="question-score"></div>
       </div>
     </div>
-    <div class="box">
-      <div class="under-box">
-        <button type="button" class="start-button">Start Quiz</button>
-      </div>
-    </div>
-  </fieldset>
-</main>
-   
+  </header>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="index.js"></script>
+  <main role="main" aria-live="assertive">
+    <fieldset>
+      <div class="box">
+        <div class="under-box">
+          <legend>Everything about the NBA</legend>
+          <p>Test your knowledge about the NBA
+            to see if you're a real fan or not!</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="under-box">
+          <button type="button" id="start"> Start Quiz</button>
+        </div>
+      </div>
+    </fieldset>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="index.js"></script>
 </body>
-</html>
 
+</html>
