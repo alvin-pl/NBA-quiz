@@ -1,9 +1,12 @@
 body {
   font-family: "Roboto", sans-serif;
   margin:0;
-  background-image: url('hardwood.jpg');
+  background: url("http://stayingforeveryoung.co/wp-content/uploads/2018/10/used-basketball-floor-for-sale-hardwood-basketball-court-an-official-orange-ball-on-a-hardwood-basketball-court-vinyl-wall-mural-basketball-hardwood-basketball-court-michigan-state-basketball-floor-fo.jpg");
 }
 
+h1{
+  color: red;
+}
 header {
   margin-top: 25px;
   height:80px;
