@@ -1,4 +1,4 @@
-//Quiz questions 
+// Quiz questions 
 const STORE = {
     questions: [//1
         {
@@ -62,7 +62,7 @@ const STORE = {
 
 
 
-/* when a user clicks on start quiz button */
+// when a user clicks on start quiz button 
 function startQuiz() {
     $('#start').on('click', function (event) {
         renderAQuestion();
@@ -70,54 +70,51 @@ function startQuiz() {
     );
 }
 
-/* Displays question number and score obtained */
-function updateQuestionAndScore() {
-    const html = $(`<ul>
-      <li id="js-answered">Questions Number: ${STORE.recentQuestion + 1}/${STORE.questions.length}</li>
-      <li id="js-score">Score: ${STORE.score}/${STORE.questions.length}</li>
-    </ul>`);
-    $(".question-score").html(html);
+// presents question and score under "NBA Quiz"
+function showQuestionAndScore() {
+    const html = $(`<ul>  
+          <li id="answered">Questions Number: ${STORE.recentQuestion + 1}/${STORE.questions.length}</li>
+         <li id="score">Score: ${STORE.score}/${STORE.questions.length}</li>
+         </ul>`);
+        $(".question-score").html(html);
 }
 
-/* Displays the options for the current question */
+// presents the options for the current question
 function updateOptions() {
     let question = STORE.questions[STORE.recentQuestion];
-    for (let i = 0; i < question.options.length; i++) {
-        $('.js-options').append(`
+    for (let i = 0; i < question.options.length; i+=1) {
+        $('.javascript-options').append(`
         <input type = "radio" name="options" id="option${i + 1}" value= "${question.options[i]}" tabindex ="${i + 1}"> 
         <label for="option${i + 1}"> ${question.options[i]}</label> <br/>
-        <span id="js-r${i + 1}"></span>
+        <span id="r${i + 1}"></span>
     `);
     }
 
 }
 
-/*displays the question*/
+// presents the question
 function renderAQuestion() {
     let question = STORE.questions[STORE.recentQuestion];
-    updateQuestionAndScore();
+  showQuestionAndScore();
     const questionHtml = $(`
   <div>
-    <form id="js-questions" class="question-form">
+    <form id="javascript-questions" class="question-form">
       
-      <fieldset>
-        <div class="box question">
+  <fieldset>
+    <div class="box question">
+      <div class="under-box">
+    <legend> ${question.question}</legend>
+     </div>
+    </div>
+       <div class="box options">
           <div class="under-box">
-            <legend> ${question.question}</legend>
-          </div>
-        </div>
-
-        <div class="box options">
-          <div class="under-box">
-            <div class="js-options"> </div>
+            <div class="javascript-options"> </div>
         </div>
       </div>
-    
-
-      <div class="box">
+         <div class="box">
         <div class="under-box">
           <button type = "submit" id="answer" tabindex="5">Submit</button>
-          <button type = "button" id="next-question" tabindex="6"> Next >></button>
+          <button type = "button" id="new-question" tabindex="10"> Next >></button>
         </div>
       </div>
     </fieldset>
@@ -125,14 +122,14 @@ function renderAQuestion() {
   </div>`);
     $("main").html(questionHtml);
     updateOptions();
-    $("#next-question").hide();
+    $("#new-question").hide();
 }
 
-/* displays results and restart quiz button */
+// presents results and resets quiz button 
 function displayResults() {
     let resultHtml = $(
         `<div class="results">
-      <form id="js-restart-quiz">
+      <form id="js-resets-quiz">
         <fieldset>
           <div class="box">
             <div class="under-box">
@@ -142,7 +139,7 @@ function displayResults() {
         
           <div class="box">
             <div class="under-box">
-              <button type="button" id="restart"> Reset!</button>
+              <button type="button" id="reset"> Reset!</button>
             </div>
           </div>
         </fieldset>
@@ -153,57 +150,58 @@ function displayResults() {
     $("main").html(resultHtml);
 }
 
-/* checks whether it reached the end of questions list */
-function handleQuestions() {
-    $('body').on('click', '#next-question', (event) => {
+// checks whether it reached the end of questions list 
+function theQuestions() {
+    $('body').on('click', '#new-question', (event) => {
         STORE.recentQuestion ===
             STORE.questions.length ? displayResults() : renderAQuestion();
     });
 }
 
 
-/*checks whether the chosen option is right or wrong and displays respective message*/
-function handleSelectOption() {
-    $('body').on("submit", '#js-questions', function (event) {
+// checks whether the chosen option is right or wrong and displays respective message
+function theSelectOption() {
+  $('body').on("submit", '#javascript-questions', function (event) {
         event.preventDefault();
-        let currentQues = STORE.questions[STORE.recentQuestion];
-        let selectedOption = $("input[name=options]:checked").val();
-        if (!selectedOption) {
+        let displayedQuestion = STORE.questions[STORE.recentQuestion]; 
+        let displayedOption = $("input[name=options]:checked").val(); 
+    if (!displayedOption) { 
             alert("Choose one!");
             return;
         }
-        let id_num = currentQues.options.findIndex(i => i === selectedOption);
-        let id = "#js-r" + ++id_num;
+    let id_num = displayedQuestion.options.findIndex(i => i === displayedOption);  
+        let id = "#r" + ++id_num;
         $('span').removeClass("right-answer wrong-answer");
-        if (selectedOption === currentQues.answer) {
+    if (displayedOption === displayedQuestion.answer) {  
             STORE.score++;
             $(`${id}`).append(`Correct! Shoot your shot again.<br/>`);
             $(`${id}`).addClass("right-answer");
         }
         else {
-            $(`${id}`).append(`You missed the mark! <br/> The correct answer is "${currentQues.answer}"<br/>`);
+      $(`${id}`).append(`You missed the mark! <br/> The correct answer is "${displayedQuestion.answer}"<br/>`); 
             $(`${id}`).addClass("wrong-answer");
         }
 
         STORE.recentQuestion++;
-        $("#js-score").text(`Score: ${STORE.score}/${STORE.questions.length}`);
+        $("#score").text(`Score: ${STORE.score}/${STORE.questions.length}`);
         $('#answer').hide();
         $("input[type=radio]").attr('disabled', true);
-        $('#next-question').show();
+        $('#new-question').show();
     });
 }
 
-function restartQuiz() {
-    $('body').on('click', '#restart', (event) => {
+// this resets the quiz to the original screen
+function resetQuiz() {
+    $('body').on('click', '#reset', (event) => {
         renderAQuestion();
     });
 }
 
-function handleQuizApp() {
+function wrapQuizApp() {
     startQuiz();
-    handleQuestions();
-    handleSelectOption();
-    restartQuiz();
+    theQuestions();
+    theSelectOption();
+    resetQuiz();
 }
 
-$(handleQuizApp);
+$(wrapQuizApp);

@@ -5,12 +5,13 @@ body {
 }
 
 h1{
-  color: red;
+  color: black;
 }
+
 header {
   margin-top: 25px;
   height:80px;
-  color: white;
+  color: black;
   margin-bottom: 55px;
 }
 
@@ -25,12 +26,12 @@ header h1 {
   line-height: 1;
   top:24px;
   text-align: center;
+  color: black;
 }
 
 header .question-score {
   font-size: 20px;
   font-weight: 600px;
-  color:white;
   background: none;
 }
 
@@ -99,14 +100,20 @@ label {
  background:ivory;
  padding: 10px 20px;
  margin: 5px 20px;
- border:2px solid greenyellow;
+ border:2px solid;
+ color: green;
+ font-weight: bold;
+ font-size: 25px;
 }
 
-.wrong-answer {
+.wrong-answer{
   background:ivory;
   padding: 10px;
   margin: 5px 20px;
-  border:2px solid #fe0000;
+  border:2px solid;
+  color: red;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .question-form button {
@@ -125,7 +132,6 @@ button:focus:enabled{
 button:disabled {
   opacity:0.5;
 }
-
 
 
 * {
