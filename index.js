@@ -40,9 +40,9 @@ const STORE = {
                 "Michael Jordan",
                 "Kobe Bryant",
                 "Lebron James",
-                "Kareem Abdul Jabber",
+                "Kareem Abdul Jabbar",
             ],
-            answer: "Kareem Abdul Jabber",
+            answer: "Kareem Abdul Jabbar",
         },
         //5
         {
